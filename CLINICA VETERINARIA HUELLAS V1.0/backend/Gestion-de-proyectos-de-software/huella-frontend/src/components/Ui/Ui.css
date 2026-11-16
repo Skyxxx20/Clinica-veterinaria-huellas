@@ -1,0 +1,276 @@
+.dash {
+  max-width: 1320px;
+}
+
+/* Encabezado de página */
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.page-head h1 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: #0f2e27;
+}
+.page-head p {
+  margin: 12px 0 0;
+  font-size: 14.5px;
+  color: var(--gray);
+}
+.date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 46px;
+  padding: 0 20px;
+  font-size: 12.5px;
+  color: var(--gray);
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  white-space: nowrap;
+}
+.date-pill svg { color: #3d4744; }
+.date-pill b { color: var(--ink); }
+
+/* Tarjeta base */
+.card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+}
+.card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 26px 24px 20px;
+}
+.card__head h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.card__head p {
+  margin: 6px 0 0;
+  font-size: 11.5px;
+  color: var(--gray);
+}
+.chev-btn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: #3d4744;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.chev-btn:hover { background: #f4f7f6; border-color: #cfd8d5; }
+.chev-btn--lg { width: 34px; height: 34px; }
+
+.link-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green-primary);
+  text-decoration: none;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 20px;
+}
+.stat__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+.tone-mint { background: #e0f4eb; color: #1b8f72; }
+.tone-blue { background: #e3eef8; color: #3a78ad; }
+.tone-rose { background: #fde8e3; color: #e0604b; }
+.tone-lilac { background: #ece6f7; color: #7a5cb8; }
+.tone-peach { background: #fdeadc; color: #d9822b; }
+
+.stat__body { flex: 1; min-width: 0; }
+.stat__label { margin: 0; font-size: 12px; color: var(--gray); }
+.stat__value {
+  margin: 4px 0 6px;
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #0f2e27;
+}
+.stat__foot { margin: 0; font-size: 9.5px; color: var(--gray); }
+.stat__foot b { font-weight: 700; }
+.c-success { color: var(--green-primary); }
+.c-ink { color: var(--ink); }
+
+/* Grid principal (2/3 + 1/3) */
+.dash__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.dash__grid--stretch { align-items: stretch; }
+.dash__side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 1280px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .dash__grid { grid-template-columns: 1fr; }
+}
+
+/* ───────── Compartidos: pills, botones, avatares ───────── */
+.card__head--center { align-items: center; }
+
+.pill {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 9.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  border-radius: 999px;
+}
+.pill--ok { color: var(--green-primary); background: #dff3ea; }
+.pill--wait { color: #b8691c; background: #fdf0e2; }
+.pill--muted { color: var(--gray); background: #f1f4f3; }
+
+.btn-soft {
+  padding: 7px 12px;
+  font-size: 9.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--green-primary);
+  background: #eef8f4;
+  border: 1px solid #bfe3d3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-soft:hover { background: #dff3ea; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 9.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn-outline:hover { background: #f4f7f6; border-color: #cfd8d5; }
+
+.pet-avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+.pet-avatar--lg { width: 42px; height: 42px; border-radius: 12px; }
+
+/* ───────── Estado vacío ───────── */
+.empty {
+  margin: 0;
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* ───────── Compartidos (propietario) ───────── */
+.eyebrow {
+  display: block;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.btn-cta {
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--green-primary);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -8px rgba(18, 130, 101, 0.55);
+  transition: background 0.15s;
+}
+.btn-cta:hover { background: var(--green-primary-hover); }
+
+.btn-outline--accent { color: var(--green-primary); }
+.btn-outline--danger { color: #c53b2c; }
+.btn-outline--danger:hover { background: #fef3f2; border-color: #f5c6c0; }
+.pill--cancel { color: #c53b2c; background: #fdecea; }
+
+/* Bloque de fecha */
+.date-box {
+  flex-shrink: 0;
+  width: 67px;
+  height: 67px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--green-primary);
+  background: #e0f4eb;
+  border-radius: 14px;
+}
+.date-box strong {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  line-height: 1;
+}
+.date-box small { font-size: 7.5px; font-weight: 700; letter-spacing: 0.06em; }
+.date-box--sm { width: 52px; height: 60px; }
+.date-box--sm strong { font-size: 20px; }

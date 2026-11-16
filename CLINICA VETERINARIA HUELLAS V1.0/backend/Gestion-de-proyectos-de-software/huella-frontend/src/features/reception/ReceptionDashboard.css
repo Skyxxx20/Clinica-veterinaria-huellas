@@ -1,0 +1,138 @@
+.card__head--center {
+  align-items: center;
+}
+
+/* Pills y botones */
+
+.pill--ok { color: var(--green-primary); background: #dff3ea; }
+.pill--wait { color: #b8691c; background: #fdf0e2; }
+
+.btn-soft:hover { background: #dff3ea; }
+
+.btn-solid {
+  padding: 9px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--green-primary);
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-solid:hover { background: var(--green-primary-hover); }
+
+/* Agenda y llegadas */
+.agenda {
+  display: flex;
+  flex-direction: column;
+}
+.arrivals {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.arrival {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1.2fr) minmax(0, 1fr) 120px 34px;
+  align-items: center;
+  gap: 16px;
+  min-height: 60px;
+  padding: 0 24px;
+  border-top: 1px solid var(--card-border);
+}
+.arrival small {
+  display: block;
+  font-size: 9px;
+  color: var(--gray);
+}
+.arrival strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.arrival__time strong { font-size: 12.5px; }
+.arrival__time small { margin-top: 5px; }
+.arrival__pet {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.arrival__pet small,
+.arrival__owner small { margin-top: 3px; }
+.arrival__owner small { margin: 0 0 3px; }
+.arrival__action { justify-self: end; }
+
+/* Urgencias */
+.urgent {
+  position: relative;
+  min-height: 223px;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(90deg, #134d3f 0%, #134d3f 38%, rgba(19, 77, 63, 0.55) 100%),
+    var(--hero) center right / cover;
+  border-radius: 22px;
+}
+.urgent__content {
+  position: relative;
+  max-width: 260px;
+  padding: 24px;
+}
+.urgent__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9be6c8;
+}
+.urgent__tag i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34c997;
+}
+.urgent h2 {
+  margin: 14px 0 12px;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.urgent p {
+  margin: 0 0 22px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+.urgent__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.urgent__btn:hover { transform: translateY(-1px); }
+
+/* Próximo en atención */
+.next {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--card-border);
+}
+.next__info { flex: 1; min-width: 0; }
+.next__info strong { display: block; font-size: 11.5px; color: var(--ink); }
+.next__info small { display: block; margin-top: 3px; font-size: 9px; color: var(--gray); }

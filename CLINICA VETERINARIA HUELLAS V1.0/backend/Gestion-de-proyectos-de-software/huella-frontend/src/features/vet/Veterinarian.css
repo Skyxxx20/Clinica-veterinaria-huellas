@@ -1,0 +1,159 @@
+.vet-card { min-height: 427px; }
+.list { margin: 0; padding: 0; list-style: none; }
+
+.eyebrow {
+  display: block;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* ───────── Mis consultas ───────── */
+.consult {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1.2fr) minmax(0, 1fr) 110px 34px;
+  align-items: center;
+  gap: 16px;
+  min-height: 72px;
+  padding: 0 24px;
+  border-top: 1px solid var(--card-border);
+}
+.consult small { display: block; font-size: 9px; color: var(--gray); }
+.consult strong { display: block; font-size: 12px; font-weight: 700; color: var(--ink); }
+.consult__time strong { font-size: 12.5px; }
+.consult__time small { margin-top: 5px; }
+.consult__pet { display: flex; align-items: center; gap: 14px; }
+.consult__pet small { margin-top: 3px; }
+.consult__owner small { margin-bottom: 3px; }
+.consult__status { justify-self: end; }
+
+/* ───────── Historias clínicas ───────── */
+.record {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--card-border);
+}
+.record__date {
+  flex-shrink: 0;
+  width: 67px;
+  height: 67px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--green-primary);
+  background: #e0f4eb;
+  border-radius: 14px;
+}
+.record__date strong {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  line-height: 1;
+}
+.record__date small {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.record__body { flex: 1; min-width: 0; }
+.record__who {
+  font-size: 8.5px;
+  font-weight: 700;
+  color: var(--green-primary);
+}
+.record__body h3 {
+  margin: 8px 0 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.record__body p { margin: 0; font-size: 9px; color: var(--gray); }
+.record__actions { display: flex; align-items: center; gap: 8px; }
+.btn-icon-danger {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: #c5503f;
+  background: #fff;
+  border: 1px solid #f1d0cb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-icon-danger:hover { background: #fef3f2; }
+
+/* ───────── Recetas ───────── */
+.rx-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 22px;
+  border-top: 1px solid var(--card-border);
+}
+.rx {
+  display: flex;
+  flex-direction: column;
+  min-height: 212px;
+  padding: 18px;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+}
+.rx__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+.rx__eyebrow {
+  margin: 22px 0 8px;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+.rx__eyebrow span { letter-spacing: 0; text-transform: none; }
+.rx h3 { margin: 0 0 8px; font-size: 13px; font-weight: 700; color: var(--ink); }
+.rx p { margin: 0; font-size: 8.5px; color: var(--gray); }
+.rx .btn-outline { align-self: flex-start; margin-top: 22px; }
+
+/* ───────── Vacunas ───────── */
+.vaccine {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  min-height: 72px;
+  padding: 0 24px;
+  border-top: 1px solid var(--card-border);
+}
+.vaccine:last-child { border-bottom: 1px solid var(--card-border); }
+.vaccine__pet { display: flex; align-items: center; gap: 14px; }
+.vaccine__pet strong { display: block; font-size: 11.5px; font-weight: 700; color: var(--ink); }
+.vaccine__pet small { display: block; margin-top: 4px; font-size: 9px; color: var(--gray); }
+.vaccine__dose strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (max-width: 1280px) {
+  .rx-grid { grid-template-columns: 1fr; }
+}
+
+.record__body p,
+.rx p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

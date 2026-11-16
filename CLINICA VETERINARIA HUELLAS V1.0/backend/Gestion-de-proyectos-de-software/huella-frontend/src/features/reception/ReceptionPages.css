@@ -1,0 +1,83 @@
+.room-card { min-height: 426px; }
+
+/* Agenda: navegación */
+.cal-nav { display: flex; gap: 8px; }
+.cal-nav .btn-outline { height: 28px; padding: 0 12px; justify-content: center; }
+.cal-nav .btn-outline--sq { width: 32px; padding: 0; }
+
+/* Tira de días */
+.week {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  padding: 11px 12px;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+}
+.week__day {
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--gray);
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.week__day small {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.week__day strong {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 500;
+}
+.week__day:hover { background: #f4f7f6; }
+.week__day.is-active {
+  color: #fff;
+  background: var(--green-primary);
+  box-shadow: 0 8px 16px -8px rgba(18, 130, 101, 0.6);
+}
+
+/* Citas del día */
+.slots { margin: 0; padding: 0; list-style: none; }
+.slot {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 72px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--card-border);
+}
+.slot:last-child { border-bottom: 0; }
+.slot__time {
+  width: 52px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.slot__bar { width: 3px; height: 40px; border-radius: 2px; }
+.bar-mint { background: #2fae8f; }
+.bar-blue { background: #4a8cc2; }
+.bar-peach { background: #e8956a; }
+.bar-lilac { background: #8b6cc4; }
+.bar-rose { background: #e0604b; }
+
+.slot__info { flex: 1; min-width: 0; }
+.slot__info strong { display: block; font-size: 10.5px; font-weight: 700; color: var(--ink); }
+.slot__info small { display: block; margin-top: 4px; font-size: 8.5px; color: var(--gray); }
+.slot__actions { display: flex; align-items: center; gap: 8px; }
+
+.slot.is-cancelled { opacity: 0.55; }
+.slot.is-cancelled .slot__info strong { text-decoration: line-through; }
+
+.btn-outline--accent { color: var(--green-primary); }
+.btn-outline--danger { color: #c53b2c; }
+.btn-outline--danger:hover { background: #fef3f2; border-color: #f5c6c0; }
+.pill--cancel { color: #c53b2c; background: #fdecea; }
