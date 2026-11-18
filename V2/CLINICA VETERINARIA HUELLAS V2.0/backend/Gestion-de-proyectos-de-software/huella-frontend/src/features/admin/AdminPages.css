@@ -1,0 +1,94 @@
+/* ───────── Centro de alertas ───────── */
+.alerts-card { min-height: 428px; }
+
+.btn-cta {
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--green-primary);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -8px rgba(18, 130, 101, 0.55);
+  transition: background 0.15s;
+}
+.btn-cta:hover { background: var(--green-primary-hover); }
+
+.alert-list { margin: 0; padding: 0; list-style: none; }
+.alert-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto 96px;
+  align-items: center;
+  gap: 16px;
+  min-height: 81px;
+  padding: 0 24px;
+  border-top: 1px solid var(--card-border);
+}
+.alert-row:last-child { border-bottom: 1px solid var(--card-border); }
+.alert-row__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+.alert-row__info strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.alert-row__info small {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+  color: var(--gray);
+}
+.alert-row__action { display: flex; justify-content: flex-end; }
+
+/* Envío rápido */
+.channels { margin: 0; padding: 0; list-style: none; }
+.channels li { border-top: 1px solid var(--card-border); }
+.channels button {
+  width: 100%;
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 24px;
+  text-align: left;
+  color: #3d4744;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.channels button:hover { background: #f8fbfa; }
+.channels button span { flex: 1; }
+.channels strong { display: block; font-size: 11px; font-weight: 700; color: var(--ink); }
+.channels small { display: block; margin-top: 4px; font-size: 8.5px; color: var(--gray); }
+.channels li:last-child button { border-radius: 0 0 22px 22px; }
+
+/* Aviso de confirmación */
+.toast {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 120;
+  padding: 13px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: #123d33;
+  border-radius: 12px;
+  box-shadow: 0 16px 34px -12px rgba(10, 30, 25, 0.5);
+  animation: toast-in 0.2s ease-out;
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}

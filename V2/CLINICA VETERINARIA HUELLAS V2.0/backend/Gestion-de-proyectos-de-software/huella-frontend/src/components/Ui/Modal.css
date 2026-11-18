@@ -1,0 +1,193 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(18, 36, 32, 0.45);
+  backdrop-filter: blur(6px);
+  animation: modal-fade 0.15s ease-out;
+}
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 484px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 30px 70px -20px rgba(10, 30, 25, 0.55);
+  animation: modal-rise 0.18s ease-out;
+}
+.modal__close {
+  position: absolute;
+  top: 22px;
+  right: 23px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: #3d4744;
+  background: #eef5f2;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.modal__close:hover { background: #e0ebe7; }
+
+.modal__icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: var(--green-primary);
+  background: #e0f4eb;
+  border-radius: 14px;
+}
+.modal__title {
+  margin: 22px 0 8px;
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.modal__subtitle {
+  margin: 0 0 24px;
+  font-size: 10.5px;
+  color: var(--gray);
+}
+
+/* Formularios (reutilizables en otros modales) */
+.form-field { margin-bottom: 18px; }
+.form-field label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.form-control {
+  width: 100%;
+  height: 43px;
+  padding: 0 14px;
+  font-size: 11px;
+  color: var(--ink);
+  background: #f6f9f8;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+textarea.form-control {
+  height: 92px;
+  padding: 12px 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+.form-control::placeholder { color: #8f9895; }
+.form-control:focus {
+  background: #fff;
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 4px rgba(18, 130, 101, 0.12);
+}
+.form-control.is-invalid { border-color: #e0604b; }
+.form-error {
+  margin: 7px 0 0;
+  font-size: 9.5px;
+  color: #c53b2c;
+}
+
+.select { position: relative; }
+.select select {
+  appearance: none;
+  padding-right: 38px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.select svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--ink);
+}
+
+.modal__submit {
+  width: 100%;
+  height: 46px;
+  margin-top: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--green-primary);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 22px -8px rgba(18, 130, 101, 0.55);
+  transition: background 0.15s;
+}
+.modal__submit:hover { background: var(--green-primary-hover); }
+
+@keyframes modal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modal-rise {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ───────── Formularios en modales (ampliación) ───────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.form-section {
+  margin: 4px 0 16px;
+  padding-bottom: 10px;
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  border-bottom: 1px solid var(--border);
+}
+.form-section--spaced { margin-top: 26px; }
+.select select.is-placeholder { color: #8f9895; }
+input[type="date"].form-control,
+input[type="time"].form-control { font-weight: 600; }
+.form-banner {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  font-size: 10.5px;
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  border-radius: 10px;
+}
+
+/* Aviso de confirmación (compartido) */
+.toast {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 120;
+  padding: 13px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: #123d33;
+  border-radius: 12px;
+  box-shadow: 0 16px 34px -12px rgba(10, 30, 25, 0.5);
+  animation: toast-in 0.2s ease-out;
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}

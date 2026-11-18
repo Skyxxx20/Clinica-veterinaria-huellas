@@ -1,0 +1,40 @@
+:root {
+  /* Paleta del documento de diseño */
+  --green-primary: #128265;
+  --green-primary-hover: #0f6e55;
+  --green-mint: #d3f2e4;
+  --ink: #1c2421;
+  --gray: #6c7573;
+  --white: #ffffff;
+  --border: #e3e8e6;
+  --overlay: #122420;
+  --surface: #fbfdfc;
+
+  --font-heading: "DM Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font-family: inherit;
+}
